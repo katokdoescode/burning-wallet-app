@@ -1,4 +1,4 @@
-import type { Pagination } from "./PaginationModel";
+import type { Pagination } from './PaginationModel';
 export type Wallets = WalletsRecords & Pagination;
 
 export type WalletsRecords = {
@@ -6,8 +6,8 @@ export type WalletsRecords = {
 };
 
 export interface WalletsWithPagination extends WalletsRecords {
-	pagination:  Pagination;
-};
+	pagination: Pagination;
+}
 
 export interface WalletRecord {
 	categories: string[];
@@ -20,4 +20,4 @@ export interface WalletRecord {
 	updated: string;
 	user: string;
 	expand: object;
-};
+}

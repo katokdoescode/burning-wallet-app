@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	// PROPS
-	export let required: boolean = false;
-	export let type: string = 'text';
+	export let required = false;
+	export let type = 'text';
 	export let name: string;
 	export let label: string | null;
 	export let errorMessage: string | null = null;
 
-	let localValue: string = '';
+	let localValue = '';
 	const dispatch = createEventDispatcher();
 
 	const dispatchInput = () => {
 		dispatch('input', localValue);
-	}
+	};
 </script>
 
 <div>
@@ -20,18 +20,11 @@
 		{#if !label}
 			<slot name="label">Label text</slot>
 		{:else}
-			{ label }
+			{label}
 		{/if}
 	</label>
 
-	<input
-		id="iuInput"
-		type={type}
-		name="{name}"
-		on:input={dispatchInput}
-		value={localValue}
-		required={required}
-	>
+	<input id="iuInput" {type} {name} on:input={dispatchInput} value={localValue} {required} />
 
 	{#if errorMessage}<p>{errorMessage}</p>{/if}
 </div>

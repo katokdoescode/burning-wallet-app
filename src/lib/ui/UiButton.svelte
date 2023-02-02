@@ -3,10 +3,10 @@
 	export let text: string | null = null;
 </script>
 
-<button type={type}>
+<button {type}>
 	{#if !!text}
 		{text}
 	{:else}
-		<slot/>
+		<slot />
 	{/if}
 </button>

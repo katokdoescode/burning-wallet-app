@@ -2,7 +2,7 @@ $breakpoints: (
 	sm: 480px,
 	md: 768px,
 	wd: 1200px,
-	lg: 1440px,
+	lg: 1440px
 ) !default;
 
 @function get-breakpoint($key) {

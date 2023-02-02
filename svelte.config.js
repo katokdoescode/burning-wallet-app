@@ -10,11 +10,11 @@ const config = {
 	preprocess: [
 		preprocess({
 			scss: {
-				prependData: '@import \'src/lib/styles/main.scss\';'
-			},
+				prependData: "@import 'src/lib/styles/main.scss';"
+			}
 		}),
 
-		vitePreprocess(),
+		vitePreprocess()
 	],
 
 	kit: {
@@ -24,9 +24,9 @@ const config = {
 			'$api/*': './src/api/*',
 			'$models/*': './src/models/*',
 			'$config/*': './src/config/*',
-			'$pocketbaseConfig': './src/config/pocketBase.ts',
-		},
-	},
+			$pocketbaseConfig: './src/config/pocketBase.ts'
+		}
+	}
 };
 
 export default config;
