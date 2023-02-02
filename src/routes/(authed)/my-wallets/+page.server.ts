@@ -2,6 +2,7 @@ import { WalletsApi } from '$api/WalletsApi';
 import type { PageServerLoad } from './$types';
 
 export const load = (async ({ url, setHeaders, cookies }) => {
+	// TODO: check for auth
 	const api = new WalletsApi();
 
 	setHeaders({
