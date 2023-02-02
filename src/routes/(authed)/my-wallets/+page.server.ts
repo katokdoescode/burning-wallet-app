@@ -2,11 +2,11 @@ import { WalletsApi } from '$api/WalletsApi';
 import type { PageServerLoad } from './$types';
 
 export const load = (async ({ url, setHeaders, cookies }) => {
-	// TODO: check for auth
 	const api = new WalletsApi();
+	const accessToken = cookies.get('accessToken') || '';
 
 	setHeaders({
-		Authorization: cookies.get('accessToken') || ''
+		Authorization: accessToken
 	});
 
 	const { items, pagination } = await api.getWallets(url.searchParams);
