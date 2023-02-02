@@ -10,8 +10,15 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter(),
+		alias: {
+			'$utils/*': './src/utils/*',
+			'$api/*': './src/api/*',
+			'$models/*': './src/models/*',
+			'$config/*': './src/config/*',
+			'$pocketbaseConfig': './src/config/pocketBase.ts',
+		},
+	},
 };
 
 export default config;
