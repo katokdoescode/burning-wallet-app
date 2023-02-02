@@ -7,6 +7,6 @@
 		margin-top: 100px;
 		display: grid;
 		place-items: center;
-		background-color: #edf6f9;
+		background-color: $tc-lightgray;
 	}
 </style>

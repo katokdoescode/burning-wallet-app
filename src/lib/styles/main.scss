@@ -1,0 +1,7 @@
+@import 'theme';
+@import 'breakpoints';
+
+:global(html) {
+	font-family: sans-serif;
+	color: $tc-black;
+}
