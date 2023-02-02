@@ -3,7 +3,7 @@
 	import UiButton from '$lib/ui/UiButton.svelte';
 </script>
 
-<form method="POST">
+<form method="POST" action="?/login">
 	<UiInput label="Usernname" name="username" />
 	<UiInput label="Password" name="password" type="password" />
 
