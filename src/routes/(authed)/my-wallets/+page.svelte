@@ -1,13 +1,10 @@
 <script lang="ts">
+	import Wallets from './wallets.svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
-	const { wallets, pagination } = data;
+	const { wallets } = data;
 </script>
 
-<ul>
-	{#each wallets as wallet}
-		<li>{wallet.name}</li>
-	{/each}
-
-	<pre>{pagination.page} {pagination.perPage}</pre>
-</ul>
+<section>
+	<Wallets items={wallets} />
+</section>
