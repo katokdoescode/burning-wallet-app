@@ -5,6 +5,7 @@
 			<li><a href="/login">Login</a></li>
 			<li><a href="/logout">logout</a></li>
 			<li><a href="/register">Sign up</a></li>
+			<li><a href="/my-wallets">Wallets</a></li>
 		</ul>
 	</nav>
 </header>
