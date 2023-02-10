@@ -1,5 +1,12 @@
 import type { Pagination } from './PaginationModel';
+import type { CategoryRecord } from './CategoriesModel';
+import type { CurrencyRecord } from './CurrenciesModel';
 export type Wallets = WalletsRecords & Pagination;
+
+export type WalletExpand = {
+	currency: CurrencyRecord;
+	categories: Array<CategoryRecord>;
+};
 
 export type WalletsRecords = {
 	items: WalletRecord[];
@@ -13,11 +20,11 @@ export interface WalletRecord {
 	categories: string[];
 	collectionId: string;
 	collectionName: 'wallets';
-	created: string; // TODO: replace to Date like 2023-01-23 19:52:25.573Z
+	created: Date | string;
 	currency: string;
 	id: string;
-	name: string; // TODO: expected currency name, so create new type
-	updated: string;
+	name: string;
+	updated: Date;
 	user: string;
-	expand: object;
+	expand: WalletExpand;
 }
