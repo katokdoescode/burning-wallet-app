@@ -1,11 +1,9 @@
 FROM node:18-alpine as svelte-build
-WORKDIR /svelte-kit
+WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY ./ .
 RUN npm run build
-
-FROM nginx as production-stage
-RUN mkdir /app
-COPY --from=svelte-build /svelte-kit/ /app
-COPY nginx.conf /etc/nginx/nginx.conf
+ENV PORT=8088
+EXPOSE 8088
+CMD ["node", "-r", "dotenv/config", "build"]
