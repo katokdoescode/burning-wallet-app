@@ -16,10 +16,11 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
+        password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
+          cd burning-wallet-app
           git checkout stage
-          git fetch && git pull
+          git fetch && git pull origin stage --autostash
           docker build -t burning-wallet-app ./
           docker restart burning-wallet-frontend
