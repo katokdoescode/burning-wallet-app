@@ -1,4 +1,4 @@
-name: [UPDATE] Build and deploy to the Stage env
+name: UPDATE Build and deploy to the Stage env
 on:
   push:
     branches: ['stage']
