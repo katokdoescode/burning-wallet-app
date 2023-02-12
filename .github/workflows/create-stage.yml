@@ -19,6 +19,7 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
+          git clone https://github.com/katokdoescode/burning-wallet-app.git
           git checkout stage
           git fetch && git pull
           docker build -t burning-wallet-app ./
