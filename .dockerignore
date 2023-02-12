@@ -1,0 +1,17 @@
+.git
+.git*
+.husky
+.tests
+.eslint
+.eslint*
+.prettier
+.prettier*
+.playwright.config*
+.dockerignore
+Dockerfile
+docker-compose.yml
+.vscode
+mode_modules
+public
+build
+.svelte-kit
