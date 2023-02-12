@@ -1,0 +1,23 @@
+name: Build and deploy to the Stage env
+on:
+  push:
+    branches: ['stage']
+jobs:
+  delivery:
+    if: ${{ github.event.label.name == 'updateStage' }}
+    name: Code Delivery
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout and pull branch
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          git checkout stage
+          git fetch && git pull
+          docker build -t burning-wallet-app ./
+          docker restart burning-wallet-frontend
+          
