@@ -20,6 +20,10 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd burning-wallet-app
+          echo "PUBLIC_API_URL=${{ secrets.API_URL }}" > .env
+          echo "ORIGIN=${{ secrets.APP_ORIGIN }}" >> .env
+          echo "HOST=${{ secrets.APP_HOST }}" >> .env
+          echo "PORT=${{ secrets.APP_PORT }}" >> .env
           git checkout stage
           git fetch && git pull origin stage --autostash
           docker build -t burning-wallet-app ./
