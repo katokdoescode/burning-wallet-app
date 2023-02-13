@@ -3,6 +3,15 @@ export interface Credentials {
 	password: string;
 }
 
+export type UserRegistrationData = {
+	username: string;
+	emailVisibility?: boolean;
+	email: string;
+	name?: string;
+	password: string;
+	passwordConfirm: string;
+};
+
 export type UserRecord = {
 	id: string;
 	collectionId: string;
