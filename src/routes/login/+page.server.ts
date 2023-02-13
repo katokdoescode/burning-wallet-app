@@ -6,10 +6,11 @@ import { redirect, error } from '@sveltejs/kit';
 export const actions = {
 	login: async ({ cookies, request }) => {
 		const api = new UserApi();
-		const data = await request.formData();
+
+		const data = Object.fromEntries(await request.formData());
 		const credentials: Credentials = {
-			login: data.get('username')?.toString() || '',
-			password: data.get('password')?.toString() || ''
+			login: data.username.toString(),
+			password: data.password.toString()
 		};
 
 		try {

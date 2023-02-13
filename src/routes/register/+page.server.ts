@@ -7,14 +7,14 @@ export const actions = {
 	register: async ({ request }) => {
 		const api = new UserApi();
 
-		const data = await request.formData();
+		const data = Object.fromEntries(await request.formData());
 
 		const registerData: UserRegistrationData = {
-			username: data.get('username')?.toString() || '',
-			email: data.get('email')?.toString() || '',
-			name: data.get('name')?.toString() || '',
-			password: data.get('password')?.toString() || '',
-			passwordConfirm: data.get('password')?.toString() || ''
+			username: data.username.toString(),
+			email: data.email.toString(),
+			name: data.name.toString(),
+			password: data.password.toString(),
+			passwordConfirm: data.password.toString()
 		};
 
 		const res = await api.registerUser(registerData).catch((err) => {
